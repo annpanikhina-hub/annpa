@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Алгоритмическая задача</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог книг</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="forms.html">Формы</a></li>
+                <li><a href="passport.html">Паспорт</a></li>
+                <li class="current"><a href="task.html">Алгоритмическая задача</a></li>
+                                <li><a href="https://www.ozon.ru/category/proza-35410/eksmo-100337819/" target="_blank">Озон</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1> Алгоритмическая задача</h1>
+        
+        <div class="task-description">
+            <h2>Задача: Определение типа места в плацкартном вагоне</h2>
+            <p><strong>Дано:</strong> Номер места в плацкартном вагоне (от 1 до 54)</p>
+            <p><strong>Определить:</strong> какое это место: верхнее или нижнее, в купе или боковое</p>
+        </div>
+
+        <form id="UserEnter" name="UserEnter">
+            <div class="form-group">
+                <label for="seatNumber">Номер места:</label>
+                <input type="number" id="seatNumber" name="seatNumber" min="1" max="54" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="result">Результат:</label>
+                <input type="text" id="result" name="result" value="не определен" readonly>
+            </div>
+            
+            <div class="button-group">
+                <button type="button" id="verify">Проверить</button>
+                <button type="button" id="send">Отправить</button>
+            </div>
+        </form>
+
+        <script>
+            let check = false;
+
+            function verify() {
+                let seat = parseInt(document.getElementById("seatNumber").value);
+                let res = "";
+
+                if (isNaN(seat) || seat < 1 || seat > 54) {
+                    res = "Введите номер места от 1 до 54";
+                    check = false;
+                } else {
+                    if (seat >= 1 && seat <= 36) {
+                        let position = (seat % 2 === 1) ? "нижнее" : "верхнее";
+                        res = position + " купейное";
+                        check = true;
+                    } else {
+                        let position = (seat % 2 === 1) ? "нижнее" : "верхнее";
+                        res = position + " боковое";
+                        check = true;
+                    }
+                }
+                document.getElementById("result").value = res;
+            }
+
+            function send() {
+                if (check) {
+                    alert("Данные отправлены!");
+                } else {
+                    alert("Ошибка: проверьте правильность ввода");
+                }
+            }
+
+            document.getElementById("verify").addEventListener('click', verify);
+            document.getElementById("send").addEventListener('click', send);
+        </script>
+    </main>
+</body>
+</html>

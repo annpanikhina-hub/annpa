@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Формы - Заказ и подписка</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог книг</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li class="current"><a href="forms.html">Формы</a></li>
+                <li><a href="passport.html">Паспорт</a></li>
+                <li><a href="task.html">Алгоритмическая задача</a></li>
+                                <li><a href="https://www.ozon.ru/category/proza-35410/eksmo-100337819/" target="_blank">Озон</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1> Формы заказа и подписки</h1>
+        
+        <div class="internal-nav">
+            <a href="#order-form"> Форма заказа</a>
+            <a href="#contact-form"> Форма подписки</a>
+
+        </div>
+
+        <section id="order-form">
+            <h2>🛒 Форма заказа книг</h2>
+            <form action="https://google.com" target="_blank" method="get">
+                <input type="hidden" name="order_source" value="website_catalog">
+                
+                <div class="form-group">
+                    <label for="book_title">Название книги:</label>
+                    <input type="text" id="book_title" name="book_title" value="Выберите книгу" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quantity">Количество:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Тип доставки:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="delivery_courier" name="delivery_type" value="courier" checked>
+                        <label for="delivery_courier">Курьерская доставка</label>
+                        <input type="radio" id="delivery_pickup" name="delivery_type" value="pickup">
+                        <label for="delivery_pickup">Самовывоз из магазина</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Дополнительные услуги:</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="gift_wrap" name="additional_services" value="gift_wrap">
+                        <label for="gift_wrap">Подарочная упаковка</label>
+                        <input type="checkbox" id="bookmark" name="additional_services" value="bookmark">
+                        <label for="bookmark">Эксклюзивная закладка</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="delivery_date">Желаемая дата доставки:</label>
+                    <input type="date" id="delivery_date" name="delivery_date" required>
+                </div>
+                
+                <div class="button-group">
+                    <input type="submit" value=" Отправить заказ">
+                </div>
+            </form>
+        </section>
+
+        <section id="contact-form">
+            <h2> Подписка на новинки</h2>
+            <form action="https://google.com" target="_blank" method="get">
+                <input type="hidden" name="form_type" value="subscription">
+                
+                <div class="form-group">
+                    <label for="surname">Фамилия:</label>
+                    <input type="text" id="surname" name="surname" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="group">Группа/Отдел:</label>
+                    <input type="text" id="group" name="group">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Мобильный телефон:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Пароль для входа:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Электронная почта:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="date">Дата подписки:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                
+                <div class="button-group">
+                    <input type="submit" value=" Подписаться">
+                </div>
+            </form>
+        </section>
+
+        <div class="internal-nav">
+            <a href="#top"> К началу страницы</a>
+        </div>
+    </main>
+</body>
+</html>

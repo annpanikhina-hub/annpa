@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Паспорт - DOM</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        main {
+            position: relative;
+            min-height: 600px;
+            background-image: url("/passport.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center top;
+            padding-top: 20px;
+        }
+        
+        .passport-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+        
+        .div1 {
+            position: absolute;
+            left: 180px;
+            top: 40px;
+            font: bold 90% serif;
+        }
+        .div2 {
+            position: absolute;
+            left: 159px;
+            top: 110px;
+        }
+        .div3 {
+            position: absolute;
+            left: 340px;
+            top: 110px;
+        }
+        .div4 {
+            position: absolute;
+            left: 266px;
+            top: 330px;
+
+        }
+        .div5 {
+            position: absolute;
+            left: 260px;
+            top: 380px;
+        }
+        .div6 {
+            position: absolute;
+            left: 265px;
+            top: 406px;
+        }
+        .div7 {
+            position: absolute;
+            left: 250px;
+            top: 430px;
+        }
+        .div8 {
+            position: absolute;
+            left: 335px;
+            top: 430px;
+        }
+        .div9 {
+            position: absolute;
+            left: 300px;
+            top: 454px;
+        }
+        .photo {
+            position: absolute;
+            left: 100px;
+            top: 370px;
+        }
+        
+        .controls {
+            text-align: center;
+            margin-top: 450px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #8A5A7D;
+            margin: 0 0 20px 0;
+            padding-top: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding-bottom: 10px;
+        }
+        
+        button {
+            background: #FFB6C1;
+        }
+        
+        button:hover {
+            box-shadow: 0 6px 12px rgba(255, 182, 193, 0.4);
+        }
+        .screen{
+            width: 900px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог книг</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="forms.html">Формы</a></li>
+                <li class="current"><a href="passport.html">Паспорт</a></li>
+                <li><a href="task.html">Алгоритмическая задача</a></li>
+                                <li><a href="https://www.ozon.ru/category/proza-35410/eksmo-100337819/" target="_blank">Озон</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        
+        <div class="passport-container">
+            <div class="div1">МВД ПО РЕСПУБЛИКЕ МАРИЙ ЭЛ </div>
+            <div class="div2">24.08.2020</div>
+            <div class="div3">770-064</div>
+            <div class="div4">Панихина</div>
+            <div class="div5">Анна</div>
+            <div class="div6">Андреевна</div>
+            <div class="div7">жен.</div>
+            <div class="div8">11.08.2006 </div>
+            <div class="div9">гор. Йошкар-Ола</div>
+            <div class="photo">
+                <img src="/IMG_7436.jpg" alt="Фото" height="140" width="120">
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="change">Замена</button>
+        </div>
+    </main>
+
+    <script>
+        const changeButton = document.getElementById("change");
+        const resetButton = document.getElementById("reset");
+
+        function changeAll(){
+            if (document.querySelector('.div4').innerText === 'Panikhina') {
+                document.querySelector('.div4').innerText = 'Панихина';
+                document.querySelector('.div5').innerText = 'Анна';
+                document.querySelector('.div6').innerText = 'Андреевна';
+                document.querySelector('.div7').innerText = 'жен.';
+                document.querySelector('.div8').innerText = '11.08.2006 \u00A0\u00A0\u00A0\u00A0\u00A0 жен';
+                document.querySelector('.div9').innerText = 'гор.Йошка-Ола';
+                changeButton.textContent = 'Замена на латиницу';
+            } else {
+                document.querySelector('.div4').innerText = 'Panikhina';
+                document.querySelector('.div5').innerText = 'Anna';
+                document.querySelector('.div6').innerText = 'Andreevna';
+                document.querySelector('.div7').innerText = 'female';
+                document.querySelector('.div8').innerText = '11.08.2006';
+                document.querySelector('.div9').innerText = 'Joshkar-Ola';
+                changeButton.textContent = 'Замена на кириллицу';
+            }
+        }
+
+        function resetAll() {
+            document.querySelector('.div4').innerText = 'Панихина';
+            document.querySelector('.div5').innerText = 'Анна';
+            document.querySelector('.div6').innerText = 'Андреевна';
+            document.querySelector('.div7').innerText = 'жен.';
+            document.querySelector('.block8').innerText = '11.08.2006 \u00A0\u00A0\u00A0\u00A0\u00A0 жен';
+            document.querySelector('.div9').innerText = 'гор. Йошкар-Ола';
+            changeButton.textContent = 'Замена на латиницу';
+        }
+
+        changeButton.addEventListener("click", changeAll);
+        resetButton.addEventListener("click", resetAll);
+    </script>
+
+    <img class="screen" src="/Снимок экрана 2025-10-22 в 01.08.43.png" alt="">
+</body>
+</html>

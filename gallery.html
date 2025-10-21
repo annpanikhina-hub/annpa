@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея книг - Фото и описание</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .gallery-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin: 2rem 0;
+            padding: 2rem;
+            border: 2px solid #FFE4E6;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #FFF8F8, #FFF0F5);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
+        }
+
+        .book-cover {
+            flex-shrink: 0;
+        }
+
+        .book-cover img {
+            border-radius: 10px;
+            border: 3px solid #FFE4E6;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .book-cover img {
+            border-color: #FFB6C1;
+            transform: scale(1.05);
+        }
+
+        .book-info {
+            flex: 1;
+        }
+
+        .book-title {
+            color: #8A5A7D;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .book-author {
+            color: #D87093;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .book-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .book-details {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .book-detail {
+            background: linear-gradient(#FFE4E6, #FFD1DC);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: #8A5A7D;
+            font-size: 0.9rem;
+            border: 1px solid #FFB6C1;
+        }
+
+        .gallery-section {
+            margin: 3rem 0;
+        }
+
+        .section-title {
+            border-left: 5px solid #FFB6C1;
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+            color: #8A5A7D;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог книг</a></li>
+                <li class="current"><a href="gallery.html">Галерея</a></li>
+                <li><a href="forms.html">Формы</a></li>
+                <li><a href="passport.html">Паспорт</a></li>
+                <li><a href="task.html">Алгоритмическая задача</a></li>
+                                <li><a href="https://www.ozon.ru/category/proza-35410/eksmo-100337819/" target="_blank">Озон</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Галерея книг</h1>
+        
+        <div class="internal-nav">
+            <a href="#classic"> Классика</a>
+            <a href="#modern"> Современная проза</a>
+            <a href="#romance"> Романы</a>
+        </div>
+
+        <section id="classic" class="gallery-section">
+            <h2 class="section-title">Классическая литература</h2>
+
+            <div class="gallery-item">
+                <div class="book-cover">
+                    <a href="/1.webp" target="_blank">
+                        <img src="/1.webp" alt="Миссис Дэллоуэй" width="120">
+                    </a>
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Миссис Дэллоуэй. На маяк</h3>
+                    <p class="book-author">Вирджиния Вулф</p>
+                    <p class="book-description">Знаменитый роман о внутреннем мире женщины, её воспоминаниях и переживаниях. Поток сознания как литературный приём, раскрывающий глубины человеческой психологии.</p>
+                    <div class="book-details">
+                        <span class="book-detail"> 1925 год</span>
+                        <span class="book-detail"> Психологическая проза</span>
+                        <span class="book-detail"> Классика модернизма</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="book-cover">
+                    <a href="/2.webp" target="_blank">
+                        <img src="/2.webp" alt="Письмо незнакомки" width="120">
+                    </a>
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Письмо незнакомки</h3>
+                    <p class="book-author">Стефан Цвейг</p>
+                    <p class="book-description">Трогательная история о безответной любви женщины к писателю, рассказанная в форме предсмертного письма. Пронзительная история самопожертвования и преданности.</p>
+                    <div class="book-details">
+                        <span class="book-detail"> 1922 год</span>
+                        <span class="book-detail"> Драма</span>
+                        <span class="book-detail"> Эпистолярный жанр</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="book-cover">
+                    <a href="/4.webp" target="_blank">
+                        <img src="/4.webp" alt="Гордость и предубеждение" width="120">
+                    </a>
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Гордость и предубеждение</h3>
+                    <p class="book-author">Джейн Остен</p>
+                    <p class="book-description">Классика английской литературы о любви, социальных предрассудках и семейных отношениях в викторианской Англии. История Элизабет Беннет и мистера Дарси.</p>
+                    <div class="book-details">
+                        <span class="book-detail"> 1813 год</span>
+                        <span class="book-detail"> Английская классика</span>
+                        <span class="book-detail"> Роман о любви</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="modern" class="gallery-section">
+            <h2 class="section-title">Современная проза</h2>
+
+            <div class="gallery-item">
+                <div class="book-cover">
+                    <a href="/5.webp" target="_blank">
+                        <img src="/5.webp" alt="Маленькая хозяйка Большого дома" width="120">
+                    </a>
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Маленькая хозяйка Большого дома</h3>
+                    <p class="book-author">Джек Лондон</p>
+                    <p class="book-description">Психологический роман о любовном треугольнике, разворачивающемся на фоне калифорнийского ранчо. Исследование человеческих страстей и моральных дилемм.</p>
+                    <div class="book-details">
+                        <span class="book-detail"> 1916 год</span>
+                        <span class="book-detail"> Психологическая драма</span>
+                        <span class="book-detail"> Калифорния</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="romance" class="gallery-section">
+            <h2 class="section-title">Романтическая литература</h2>
+
+            <div class="gallery-item">
+                <div class="book-cover">
+                    <a href="/3.webp" target="_blank">
+                        <img src="/3.webp" alt="Маленькие женщины" width="120">
+                    </a>
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Маленькие женщины</h3>
+                    <p class="book-author">Луиза Мэй Олкотт</p>
+                    <p class="book-description">Трогательная история о взрослении четырёх сестёр Марч, их мечтах, трудностях и первой любви. Классика детской литературы, любимая поколениями читателей.</p>
+                    <div class="book-details">
+                        <span class="book-detail"> 1868 год</span>
+                        <span class="book-detail"> Семейная сага</span>
+                        <span class="book-detail"> Взросление</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="internal-nav">
+            <a href="#top"> К началу страницы</a>
+        </div>
+    </main>
+</body>
+</html>
