@@ -107,7 +107,7 @@ footer {
     margin-top: 30px;
 }
 
-nav a.active {
+nav a.current {
     background-color: #FFB6C1;
     color: white;
 }
