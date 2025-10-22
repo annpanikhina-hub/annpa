@@ -45,15 +45,17 @@
                     <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
                 </div>
                 
-                <div class="form-group">
-                    <label>Тип доставки:</label>
-                    <div class="radio-group">
-                        <input type="radio" id="delivery_courier" name="delivery_type" value="courier" checked>
-                        <label for="delivery_courier">Курьерская доставка</label>
-                        <input type="radio" id="delivery_pickup" name="delivery_type" value="pickup">
-                        <label for="delivery_pickup">Самовывоз из магазина</label>
-                    </div>
-                </div>
+<div class="form-group">
+    <label for="book_title">Выберите книгу:</label>
+    <select id="book_title" name="book_title" required>
+        <option value="">-- Выберите книгу из списка --</option>
+        <option value="master_and_margarita">Мастер и Маргарита - М. Булгаков</option>
+        <option value="crime_and_punishment">Преступление и наказание - Ф. Достоевский</option>
+        <option value="war_and_peace">Война и мир - Л. Толстой</option>
+        <option value="anna_karenina">Анна Каренина - Л. Толстой</option>
+        <option value="dead_souls">Мёртвые души - Н. Гоголь</option>
+    </select>
+</div>
                 
                 <div class="form-group">
                     <label>Дополнительные услуги:</label>
