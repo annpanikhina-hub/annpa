@@ -107,6 +107,11 @@ footer {
     margin-top: 30px;
 }
 
+nav a.active {
+    background-color: #FFB6C1;
+    color: white;
+}
+
 .stats-table {
     width: 300px;
     margin: 2rem auto;
