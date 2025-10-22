@@ -104,13 +104,29 @@
         
         button {
             background: #FFB6C1;
+            margin: 5px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
         
         button:hover {
             box-shadow: 0 6px 12px rgba(255, 182, 193, 0.4);
         }
+        
         .screen{
             width: 900px;
+        }
+        
+        .data-output {
+            text-align: center;
+            margin: 20px auto;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            max-width: 600px;
+            font-family: Arial, sans-serif;
         }
     </style>
 </head>
@@ -124,14 +140,12 @@
                 <li><a href="forms.html">Формы</a></li>
                 <li class="current"><a href="passport.html">Паспорт</a></li>
                 <li><a href="task.html">Алгоритмическая задача</a></li>
-                                <li><a href="https://www.ozon.ru/category/proza-35410/eksmo-100337819/" target="_blank">Озон</a></li>
+                <li><a href="https://www.ozon.ru/category/proza-35410/eksmo-100337819/" target="_blank">Озон</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-
-        
         <div class="passport-container">
             <div class="div1">МВД ПО РЕСПУБЛИКЕ МАРИЙ ЭЛ </div>
             <div class="div2">24.08.2020</div>
@@ -149,18 +163,18 @@
 
         <div class="controls">
             <button id="change">Замена</button>
+            <button id="getData">Получить данные</button>
         </div>
 
-         </div>
+        <div class="data-output" id="dataOutput">
 
-        <div class="controls">
-            <button id="change">Получит данные</button>
         </div>
     </main>
 
     <script>
         const changeButton = document.getElementById("change");
-        const resetButton = document.getElementById("reset");
+        const getDataButton = document.getElementById("getData");
+        const dataOutput = document.getElementById("dataOutput");
 
         function changeAll(){
             if (document.querySelector('.div4').innerText === 'Panikhina') {
@@ -168,7 +182,7 @@
                 document.querySelector('.div5').innerText = 'Анна';
                 document.querySelector('.div6').innerText = 'Андреевна';
                 document.querySelector('.div7').innerText = 'жен.';
-                document.querySelector('.div8').innerText = '11.08.2006 \u00A0\u00A0\u00A0\u00A0\u00A0 жен';
+                document.querySelector('.div8').innerText = '11.08.2006';
                 document.querySelector('.div9').innerText = 'гор.Йошка-Ола';
                 changeButton.textContent = 'Замена на латиницу';
             } else {
@@ -182,20 +196,23 @@
             }
         }
 
-        function resetAll() {
-            document.querySelector('.div4').innerText = 'Панихина';
-            document.querySelector('.div5').innerText = 'Анна';
-            document.querySelector('.div6').innerText = 'Андреевна';
-            document.querySelector('.div7').innerText = 'жен.';
-            document.querySelector('.block8').innerText = '11.08.2006';
-            document.querySelector('.div9').innerText = 'гор. Йошкар-Ола';
-            changeButton.textContent = 'Замена на латиницу';
+        function getData() {
+            const surname = document.querySelector('.div4').innerText;
+            const name = document.querySelector('.div5').innerText;
+            const birthDate = document.querySelector('.div8').innerText.split(' ')[0]; 
+            
+            dataOutput.innerHTML = `
+                <h3>Полученные данные из паспорта:</h3>
+                <p><strong>Фамилия:</strong> ${surname}</p>
+                <p><strong>Имя:</strong> ${name}</p>
+                <p><strong>Дата рождения:</strong> ${birthDate}</p>
+            `;
         }
 
         changeButton.addEventListener("click", changeAll);
-        resetButton.addEventListener("click", resetAll);
+        getDataButton.addEventListener("click", getData);
     </script>
 
-    <img class="screen" src="https://annpanikhina-hub.github.io/annpa/Снимок экрана 2025-10-22 в 01.08.43.png"  alt="">
+    <img class="screen" src="https://annpanikhina-hub.github.io/annpa/Снимок экрана 2025-10-22 в 01.08.43.png" alt="">
 </body>
 </html>
