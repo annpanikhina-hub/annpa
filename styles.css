@@ -100,12 +100,7 @@ h1, h2 {
     margin-bottom: 15px;
 }
 
-footer {
-    background: #f0f0f0;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-}
+
 
 nav a.current {
     background-color: #FFB6C1;
