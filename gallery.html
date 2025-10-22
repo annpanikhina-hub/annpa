@@ -87,6 +87,33 @@
             margin-bottom: 2rem;
             color: #8A5A7D;
         }
+
+        /* Стили для миниатюры с большим изображением */
+        .miniature-link {
+            display: inline-block;
+        }
+
+        .miniature-link .thumbnail {
+            width: 100px;
+            height: 150px;
+            object-fit: cover;
+            border: 3px solid #FFE4E6;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .miniature-link .thumbnail:hover {
+            border-color: #FFB6C1;
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4);
+        }
+
+        /* Стили для обычных изображений */
+        .book-cover img.normal {
+            width: 120px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -99,7 +126,7 @@
                 <li><a href="forms.html">Формы</a></li>
                 <li><a href="passport.html">Паспорт</a></li>
                 <li><a href="task.html">Алгоритмическая задача</a></li>
-                                <li><a href="https://www.ozon.ru/category/proza-35410/eksmo-100337819/" target="_blank">Озон</a></li>
+                <li><a href="https://www.ozon.ru/category/proza-35410/eksmo-100337819/" target="_blank">Озон</a></li>
             </ul>
         </nav>
     </header>
@@ -108,9 +135,9 @@
         <h1>Галерея книг</h1>
         
         <div class="internal-nav">
-            <a href="#classic"> Классика</a>
-            <a href="#modern"> Современная проза</a>
-            <a href="#romance"> Романы</a>
+            <a href="#classic">Классика</a>
+            <a href="#modern">Современная проза</a>
+            <a href="#romance">Романы</a>
         </div>
 
         <section id="classic" class="gallery-section">
@@ -118,8 +145,13 @@
 
             <div class="gallery-item">
                 <div class="book-cover">
-                    <a href="https://github.com/annpanikhina-hub/annpa/blob/main/1.webp.png?raw=true" target="_blank">
-                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/1.webp.png?raw=true" alt="Миссис Дэллоуэй" width="120">
+                    <!-- ПЕРВАЯ КАРТИНКА - с миниатюрой и большим изображением -->
+                    <a href="https://github.com/annpanikhina-hub/annpa/blob/main/1.webp.png?raw=true" 
+                       target="_blank" 
+                       class="miniature-link">
+                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/1.webp.png?raw=true" 
+                             alt="Миссис Дэллоуэй" 
+                             class="thumbnail">
                     </a>
                 </div>
                 <div class="book-info">
@@ -127,45 +159,46 @@
                     <p class="book-author">Вирджиния Вулф</p>
                     <p class="book-description">Знаменитый роман о внутреннем мире женщины, её воспоминаниях и переживаниях. Поток сознания как литературный приём, раскрывающий глубины человеческой психологии.</p>
                     <div class="book-details">
-                        <span class="book-detail"> 1925 год</span>
-                        <span class="book-detail"> Психологическая проза</span>
-                        <span class="book-detail"> Классика модернизма</span>
+                        <span class="book-detail">1925 год</span>
+                        <span class="book-detail">Психологическая проза</span>
+                        <span class="book-detail">Классика модернизма</span>
                     </div>
                 </div>
             </div>
 
             <div class="gallery-item">
                 <div class="book-cover">
-                    <a href="https://github.com/annpanikhina-hub/annpa/blob/main/2.webp?raw=true" target="_blank">
-                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/2.webp?raw=true" alt="Письмо незнакомки" width="120">
-                    </a>
+                    <!-- ОСТАЛЬНЫЕ КАРТИНКИ - обычные -->
+                    <img src="https://github.com/annpanikhina-hub/annpa/blob/main/2.webp?raw=true" 
+                         alt="Письмо незнакомки" 
+                         class="normal">
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">Письмо незнакомки</h3>
                     <p class="book-author">Стефан Цвейг</p>
                     <p class="book-description">Трогательная история о безответной любви женщины к писателю, рассказанная в форме предсмертного письма. Пронзительная история самопожертвования и преданности.</p>
                     <div class="book-details">
-                        <span class="book-detail"> 1922 год</span>
-                        <span class="book-detail"> Драма</span>
-                        <span class="book-detail"> Эпистолярный жанр</span>
+                        <span class="book-detail">1922 год</span>
+                        <span class="book-detail">Драма</span>
+                        <span class="book-detail">Эпистолярный жанр</span>
                     </div>
                 </div>
             </div>
 
             <div class="gallery-item">
                 <div class="book-cover">
-                    <a href="https://github.com/annpanikhina-hub/annpa/blob/main/4.webp?raw=true" target="_blank">
-                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/4.webp?raw=true" alt="Гордость и предубеждение" width="120">
-                    </a>
+                    <img src="https://github.com/annpanikhina-hub/annpa/blob/main/4.webp?raw=true" 
+                         alt="Гордость и предубеждение" 
+                         class="normal">
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">Гордость и предубеждение</h3>
                     <p class="book-author">Джейн Остен</p>
                     <p class="book-description">Классика английской литературы о любви, социальных предрассудках и семейных отношениях в викторианской Англии. История Элизабет Беннет и мистера Дарси.</p>
                     <div class="book-details">
-                        <span class="book-detail"> 1813 год</span>
-                        <span class="book-detail"> Английская классика</span>
-                        <span class="book-detail"> Роман о любви</span>
+                        <span class="book-detail">1813 год</span>
+                        <span class="book-detail">Английская классика</span>
+                        <span class="book-detail">Роман о любви</span>
                     </div>
                 </div>
             </div>
@@ -176,18 +209,18 @@
 
             <div class="gallery-item">
                 <div class="book-cover">
-                    <a href=https://github.com/annpanikhina-hub/annpa/blob/main/5.webp.png?raw=true target="_blank">
-                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/5.webp.png?raw=true" alt="Маленькая хозяйка Большого дома" width="120">
-                    </a>
+                    <img src="https://github.com/annpanikhina-hub/annpa/blob/main/5.webp.png?raw=true" 
+                         alt="Маленькая хозяйка Большого дома" 
+                         class="normal">
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">Маленькая хозяйка Большого дома</h3>
                     <p class="book-author">Джек Лондон</p>
                     <p class="book-description">Психологический роман о любовном треугольнике, разворачивающемся на фоне калифорнийского ранчо. Исследование человеческих страстей и моральных дилемм.</p>
                     <div class="book-details">
-                        <span class="book-detail"> 1916 год</span>
-                        <span class="book-detail"> Психологическая драма</span>
-                        <span class="book-detail"> Калифорния</span>
+                        <span class="book-detail">1916 год</span>
+                        <span class="book-detail">Психологическая драма</span>
+                        <span class="book-detail">Калифорния</span>
                     </div>
                 </div>
             </div>
@@ -198,25 +231,25 @@
 
             <div class="gallery-item">
                 <div class="book-cover">
-                    <a href=https://github.com/annpanikhina-hub/annpa/blob/main/3.webp?raw=true target="_blank">
-                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/3.webp?raw=true" alt="Маленькие женщины" width="120">
-                    </a>
+                    <img src="https://github.com/annpanikhina-hub/annpa/blob/main/3.webp?raw=true" 
+                         alt="Маленькие женщины" 
+                         class="normal">
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">Маленькие женщины</h3>
                     <p class="book-author">Луиза Мэй Олкотт</p>
                     <p class="book-description">Трогательная история о взрослении четырёх сестёр Марч, их мечтах, трудностях и первой любви. Классика детской литературы, любимая поколениями читателей.</p>
                     <div class="book-details">
-                        <span class="book-detail"> 1868 год</span>
-                        <span class="book-detail"> Семейная сага</span>
-                        <span class="book-detail"> Взросление</span>
+                        <span class="book-detail">1868 год</span>
+                        <span class="book-detail">Семейная сага</span>
+                        <span class="book-detail">Взросление</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <div class="internal-nav">
-            <a href="#top"> К началу страницы</a>
+            <a href="#top">К началу страницы</a>
         </div>
     </main>
 </body>
