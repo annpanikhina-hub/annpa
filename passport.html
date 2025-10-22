@@ -46,33 +46,32 @@
             left: 340px;
             top: 110px;
         }
-        .div4 {
+        #surname {
             position: absolute;
             left: 266px;
             top: 330px;
-
         }
-        .div5 {
+        #name {
             position: absolute;
             left: 260px;
             top: 380px;
         }
-        .div6 {
+        #patronymic {
             position: absolute;
             left: 265px;
             top: 406px;
         }
-        .div7 {
+        #gender {
             position: absolute;
             left: 250px;
             top: 430px;
         }
-        .div8 {
+        #birthDate {
             position: absolute;
             left: 335px;
             top: 430px;
         }
-        .div9 {
+        #birthPlace {
             position: absolute;
             left: 300px;
             top: 454px;
@@ -150,12 +149,12 @@
             <div class="div1">МВД ПО РЕСПУБЛИКЕ МАРИЙ ЭЛ </div>
             <div class="div2">24.08.2020</div>
             <div class="div3">770-064</div>
-            <div class="div4">Панихина</div>
-            <div class="div5">Анна</div>
-            <div class="div6">Андреевна</div>
-            <div class="div7">жен.</div>
-            <div class="div8">11.08.2006 </div>
-            <div class="div9">гор. Йошкар-Ола</div>
+            <div id="surname">Панихина</div>
+            <div id="name">Анна</div>
+            <div id="patronymic">Андреевна</div>
+            <div id="gender">жен.</div>
+            <div id="birthDate">11.08.2006 </div>
+            <div id="birthPlace">гор. Йошкар-Ола</div>
             <div class="photo">
                 <img src="https://github.com/annpanikhina-hub/annpa/blob/main/IMG_7436.jpg?raw=true" alt="Фото" height="140" width="120">
             </div>
@@ -167,7 +166,7 @@
         </div>
 
         <div class="data-output" id="dataOutput">
-
+     
         </div>
     </main>
 
@@ -177,29 +176,29 @@
         const dataOutput = document.getElementById("dataOutput");
 
         function changeAll(){
-            if (document.querySelector('.div4').innerText === 'Panikhina') {
-                document.querySelector('.div4').innerText = 'Панихина';
-                document.querySelector('.div5').innerText = 'Анна';
-                document.querySelector('.div6').innerText = 'Андреевна';
-                document.querySelector('.div7').innerText = 'жен.';
-                document.querySelector('.div8').innerText = '11.08.2006';
-                document.querySelector('.div9').innerText = 'гор.Йошка-Ола';
+            if (document.getElementById('surname').innerText === 'Panikhina') {
+                document.getElementById('surname').innerText = 'Панихина';
+                document.getElementById('name').innerText = 'Анна';
+                document.getElementById('patronymic').innerText = 'Андреевна';
+                document.getElementById('gender').innerText = 'жен.';
+                document.getElementById('birthDate').innerText = '11.08.2006';
+                document.getElementById('birthPlace').innerText = 'гор.Йошка-Ола';
                 changeButton.textContent = 'Замена на латиницу';
             } else {
-                document.querySelector('.div4').innerText = 'Panikhina';
-                document.querySelector('.div5').innerText = 'Anna';
-                document.querySelector('.div6').innerText = 'Andreevna';
-                document.querySelector('.div7').innerText = 'female';
-                document.querySelector('.div8').innerText = '11.08.2006';
-                document.querySelector('.div9').innerText = 'Joshkar-Ola';
+                document.getElementById('surname').innerText = 'Panikhina';
+                document.getElementById('name').innerText = 'Anna';
+                document.getElementById('patronymic').innerText = 'Andreevna';
+                document.getElementById('gender').innerText = 'female';
+                document.getElementById('birthDate').innerText = '11.08.2006';
+                document.getElementById('birthPlace').innerText = 'Joshkar-Ola';
                 changeButton.textContent = 'Замена на кириллицу';
             }
         }
 
         function getData() {
-            const surname = document.querySelector('.div4').innerText;
-            const name = document.querySelector('.div5').innerText;
-            const birthDate = document.querySelector('.div8').innerText.split(' ')[0]; 
+            const surname = document.getElementById('surname').innerText;
+            const name = document.getElementById('name').innerText;
+            const birthDate = document.getElementById('birthDate').innerText.split(' ')[0];
             
             dataOutput.innerHTML = `
                 <h3>Полученные данные из паспорта:</h3>
