@@ -5,6 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог книг</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .checkout-form {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+        
+        .checkout-form h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .book-selection {
+            margin-bottom: 20px;
+        }
+        
+        .book-checkbox {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            background: white;
+        }
+        
+        .book-checkbox input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        
+        .book-info {
+            flex-grow: 1;
+        }
+        
+        .book-title {
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        
+        .book-author {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+        
+        .book-price {
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .quantity-control input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            text-align: center;
+        }
+        
+        .button-group {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .button-group input[type="submit"] {
+            padding: 12px 30px;
+            background-color: #f5c1e9;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .button-group input[type="submit"]:hover {
+            background-color: #f5c1e9;
+        }
+        
+        .total-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 15px;
+            text-align: right;
+            padding: 10px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,7 +127,7 @@
     </header>
 
     <main>
-        <h1> Каталог книг</h1>
+        <h1>Каталог книг</h1>
         
         <section id="fiction">
             <h2>Художественная литература</h2>
@@ -35,9 +140,9 @@
                 </tr>
                 <tr>
                     <td>
-                        <a href="https://www.ozon.ru/product/nabor-shipovnik-i-hrizantemy-iz-6-ti-romanov-malenkie-zhenshchiny-sherli-dovody-rassudka-tess-iz-1085633115/?at=K8tZOKN8Wcnpk80EsEEjnK2sL2QOZgC41gKv8iEp0xpn">
-                        <img src="https://ir-8.ozone.ru/s3/multimedia-1-3/wc1000/7026852351.jpg" alt="Миссис Дэллоуэй. На маяк" width="60">
-                    </a>
+                        <a href="https://www.ozon.ru/product/nabor-shipovnik-i-hrizantemy-iz-6-ti-romanov-malenkie-zhenshchiny-sherli-dovody-rassudka-tess-iz-1085633115/">
+                            <img src="https://ir-8.ozone.ru/s3/multimedia-1-3/wc1000/7026852351.jpg" alt="Миссис Дэллоуэй. На маяк" width="60">
+                        </a>
                     </td>
                     <td>Миссис Дэллоуэй. На маяк</td>
                     <td>Вирджиния Вулф</td>
@@ -45,8 +150,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <a href="https://www.ozon.ru/product/nabor-shipovnik-i-hrizantemy-iz-6-ti-romanov-malenkie-zhenshchiny-sherli-dovody-rassudka-tess-iz-1085633115/?at=K8tZOKN8Wcnpk80EsEEjnK2sL2QOZgC41gKv8iEp0xpn">
-                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/9.webp?raw=true" alt="Письмо незнакомки" width="60">
+                        <a href="https://www.ozon.ru/product/nabor-shipovnik-i-hrizantemy-iz-6-ti-romanov-malenkie-zhenshchiny-sherli-dovody-rassudka-tess-iz-1085633115/">
+                            <img src="https://github.com/annpanikhina-hub/annpa/blob/main/9.webp?raw=true" alt="Письмо незнакомки" width="60">
                         </a>
                     </td>
                     <td>Письмо незнакомки</td>
@@ -54,85 +159,310 @@
                     <td class="price-tag">420 ₽</td>
                 </tr>
                 <tr>
-                    <td><img src="https://github.com/annpanikhina-hub/annpa/blob/main/7.webp?raw=true" alt="Маленькие женщины" width="60"></td>
+                    <td>
+                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/7.webp?raw=true" alt="Маленькие женщины" width="60">
+                    </td>
                     <td>Маленькие женщины</td>
                     <td>Луиза Мэй Олкотт</td>
                     <td class="price-tag">560 ₽</td>
                 </tr>
                 <tr>
-                    <td><img src="https://github.com/annpanikhina-hub/annpa/blob/main/4.webp?raw=true" alt="Гордость и предубеждение" width="60"></td>
+                    <td>
+                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/4.webp?raw=true" alt="Гордость и предубеждение" width="60">
+                    </td>
                     <td>Гордость и предубеждение</td>
                     <td>Джейн Остен</td>
-                    <td class="price-tag">480 ₽</td>                    
+                    <td class="price-tag">480 ₽</td>
                 </tr>
                 <tr>
-                    <td><img src="https://github.com/annpanikhina-hub/annpa/blob/main/8.webp?raw=true" alt="Маленькая хозяйка Большого дома" width="60"></td>
+                    <td>
+                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/8.webp?raw=true" alt="Маленькая хозяйка Большого дома" width="60">
+                    </td>
                     <td>Маленькая хозяйка Большого дома</td>
                     <td>Джек Лондон</td>
-                    <td class="price-tag">520 ₽</td>                    
+                    <td class="price-tag">520 ₽</td>
                 </tr>
                 <tr>
-                    <td><img src="https://github.com/annpanikhina-hub/annpa/blob/main/11.webp?raw=true" alt="Любовник леди Чаттерли" width="60"></td>
+                    <td>
+                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/11.webp?raw=true" alt="Любовник леди Чаттерли" width="60">
+                    </td>
                     <td>Любовник леди Чаттерли</td>
                     <td>Дэвид Герберт Лоуренс</td>
-                    <td class="price-tag">470 ₽</td>                    
+                    <td class="price-tag">470 ₽</td>
                 </tr>
                 <tr>
-                    <td><img src="https://github.com/annpanikhina-hub/annpa/blob/main/12.webp?raw=true" alt="Ламское счастье" width="60"></td>
+                    <td>
+                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/12.webp?raw=true" alt="Ламское счастье" width="60">
+                    </td>
                     <td>Ламское счастье</td>
                     <td>Эмиль Золя</td>
-                    <td class="price-tag">390 ₽</td>                    
+                    <td class="price-tag">390 ₽</td>
                 </tr>
                 <tr>
-                    <td><img src="https://github.com/annpanikhina-hub/annpa/blob/main/8.webp?raw=true" alt="Тэсс из рода д'Эрбервиллей" width="60"></td>
+                    <td>
+                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/8.webp?raw=true" alt="Тэсс из рода д'Эрбервиллей" width="60">
+                    </td>
                     <td>Тэсс из рода д'Эрбервиллей</td>
                     <td>Томас Гарди</td>
-                    <td class="price-tag">510 ₽</td>                    
+                    <td class="price-tag">510 ₽</td>
                 </tr>
                 <tr>
-                    <td><img src="https://github.com/annpanikhina-hub/annpa/blob/main/9.webp?raw=true" alt="Мэнсфилд-парк" width="60"></td>
+                    <td>
+                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/9.webp?raw=true" alt="Мэнсфилд-парк" width="60">
+                    </td>
                     <td>Мэнсфилд-парк</td>
                     <td>Джейн Остен</td>
-                    <td class="price-tag">460 ₽</td>                    
+                    <td class="price-tag">460 ₽</td>
                 </tr>
                 <tr>
-                    <td><img src="https://github.com/annpanikhina-hub/annpa/blob/main/10.webp?raw=true" alt="Незнакомка из Уайлдфелл-Холла" width="60"></td>
+                    <td>
+                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/10.webp?raw=true" alt="Незнакомка из Уайлдфелл-Холла" width="60">
+                    </td>
                     <td>Незнакомка из Уайлдфелл-Холла</td>
                     <td>Энн Бронте</td>
-                    <td class="price-tag">440 ₽</td>                    
+                    <td class="price-tag">440 ₽</td>
                 </tr>
             </table>
         </section>
 
- <table class="stats-table">
-    <tr >
-        <th colspan="2">Статистика книг</th>
-    </tr>
-    <tr>
-        <td class="stats-part">Всего книг в каталоге</td>
-        <td><strong>10</strong></td>
-    </tr>
-    <tr>
-        <td>Средняя цена</td>
-        <td class="price-tag">500 ₽</td>
-    </tr>
-    <tr>
-        <td>Книги со скидкой</td>
-        <td>3</td>
-    </tr>
-    <tr>
-        <td>Самый популярный автор</td>
-        <td>Джейн Остен</td>
-    </tr>
-</table>
-
-      
-
-
-        <div class="internal-nav">
-   <a href="#top">К началу</a>
+        <!-- Форма заказа под таблицей -->
+        <div class="checkout-form">
+            <h3>Выберите книги для заказа</h3>
+            <form action="https://google.com" target="_blank" method="get" id="order-form">
+                <input type="hidden" name="form_type" value="multiple_books_order">
+                
+                <div class="book-selection">
+                    <div class="book-checkbox">
+                        <input type="checkbox" id="book1" name="books[]" value="Миссис Дэллоуэй. На маяк|450" data-price="450">
+                        <div class="book-info">
+                            <div class="book-title">Миссис Дэллоуэй. На маяк</div>
+                            <div class="book-author">Вирджиния Вулф</div>
+                            <div class="book-price">450 ₽</div>
+                        </div>
+                        <div class="quantity-control">
+                            <label for="qty1">Кол-во:</label>
+                            <input type="number" id="qty1" data-for="book1" min="0" max="10" value="0" disabled>
+                        </div>
+                    </div>
+                    
+                    <div class="book-checkbox">
+                        <input type="checkbox" id="book2" name="books[]" value="Письмо незнакомки|420" data-price="420">
+                        <div class="book-info">
+                            <div class="book-title">Письмо незнакомки</div>
+                            <div class="book-author">Стефан Цвейг</div>
+                            <div class="book-price">420 ₽</div>
+                        </div>
+                        <div class="quantity-control">
+                            <label for="qty2">Кол-во:</label>
+                            <input type="number" id="qty2" data-for="book2" min="0" max="10" value="0" disabled>
+                        </div>
+                    </div>
+                    
+                    <div class="book-checkbox">
+                        <input type="checkbox" id="book3" name="books[]" value="Маленькие женщины|560" data-price="560">
+                        <div class="book-info">
+                            <div class="book-title">Маленькие женщины</div>
+                            <div class="book-author">Луиза Мэй Олкотт</div>
+                            <div class="book-price">560 ₽</div>
+                        </div>
+                        <div class="quantity-control">
+                            <label for="qty3">Кол-во:</label>
+                            <input type="number" id="qty3" data-for="book3" min="0" max="10" value="0" disabled>
+                        </div>
+                    </div>
+                    
+                    <div class="book-checkbox">
+                        <input type="checkbox" id="book4" name="books[]" value="Гордость и предубеждение|480" data-price="480">
+                        <div class="book-info">
+                            <div class="book-title">Гордость и предубеждение</div>
+                            <div class="book-author">Джейн Остен</div>
+                            <div class="book-price">480 ₽</div>
+                        </div>
+                        <div class="quantity-control">
+                            <label for="qty4">Кол-во:</label>
+                            <input type="number" id="qty4" data-for="book4" min="0" max="10" value="0" disabled>
+                        </div>
+                    </div>
+                    
+                    <div class="book-checkbox">
+                        <input type="checkbox" id="book5" name="books[]" value="Маленькая хозяйка Большого дома|520" data-price="520">
+                        <div class="book-info">
+                            <div class="book-title">Маленькая хозяйка Большого дома</div>
+                            <div class="book-author">Джек Лондон</div>
+                            <div class="book-price">520 ₽</div>
+                        </div>
+                        <div class="quantity-control">
+                            <label for="qty5">Кол-во:</label>
+                            <input type="number" id="qty5" data-for="book5" min="0" max="10" value="0" disabled>
+                        </div>
+                    </div>
+                    
+                    <div class="book-checkbox">
+                        <input type="checkbox" id="book6" name="books[]" value="Любовник леди Чаттерли|470" data-price="470">
+                        <div class="book-info">
+                            <div class="book-title">Любовник леди Чаттерли</div>
+                            <div class="book-author">Дэвид Герберт Лоуренс</div>
+                            <div class="book-price">470 ₽</div>
+                        </div>
+                        <div class="quantity-control">
+                            <label for="qty6">Кол-во:</label>
+                            <input type="number" id="qty6" data-for="book6" min="0" max="10" value="0" disabled>
+                        </div>
+                    </div>
+                    
+                    <div class="book-checkbox">
+                        <input type="checkbox" id="book7" name="books[]" value="Ламское счастье|390" data-price="390">
+                        <div class="book-info">
+                            <div class="book-title">Ламское счастье</div>
+                            <div class="book-author">Эмиль Золя</div>
+                            <div class="book-price">390 ₽</div>
+                        </div>
+                        <div class="quantity-control">
+                            <label for="qty7">Кол-во:</label>
+                            <input type="number" id="qty7" data-for="book7" min="0" max="10" value="0" disabled>
+                        </div>
+                    </div>
+                    
+                    <div class="book-checkbox">
+                        <input type="checkbox" id="book8" name="books[]" value="Тэсс из рода д'Эрбервиллей|510" data-price="510">
+                        <div class="book-info">
+                            <div class="book-title">Тэсс из рода д'Эрбервиллей</div>
+                            <div class="book-author">Томас Гарди</div>
+                            <div class="book-price">510 ₽</div>
+                        </div>
+                        <div class="quantity-control">
+                            <label for="qty8">Кол-во:</label>
+                            <input type="number" id="qty8" data-for="book8" min="0" max="10" value="0" disabled>
+                        </div>
+                    </div>
+                    
+                    <div class="book-checkbox">
+                        <input type="checkbox" id="book9" name="books[]" value="Мэнсфилд-парк|460" data-price="460">
+                        <div class="book-info">
+                            <div class="book-title">Мэнсфилд-парк</div>
+                            <div class="book-author">Джейн Остен</div>
+                            <div class="book-price">460 ₽</div>
+                        </div>
+                        <div class="quantity-control">
+                            <label for="qty9">Кол-во:</label>
+                            <input type="number" id="qty9" data-for="book9" min="0" max="10" value="0" disabled>
+                        </div>
+                    </div>
+                    
+                    <div class="book-checkbox">
+                        <input type="checkbox" id="book10" name="books[]" value="Незнакомка из Уайлдфелл-Холла|440" data-price="440">
+                        <div class="book-info">
+                            <div class="book-title">Незнакомка из Уайлдфелл-Холла</div>
+                            <div class="book-author">Энн Бронте</div>
+                            <div class="book-price">440 ₽</div>
+                        </div>
+                        <div class="quantity-control">
+                            <label for="qty10">Кол-во:</label>
+                            <input type="number" id="qty10" data-for="book10" min="0" max="10" value="0" disabled>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="total-price" id="total-price">
+                    Итого: 0 ₽
+                </div>
+                
+                <div class="button-group">
+                    <input type="submit" value="Купить выбранные книги" id="submit-btn" disabled>
+                </div>
+            </form>
         </div>
 
+        <table class="stats-table">
+            <tr>
+                <th colspan="2">Статистика книг</th>
+            </tr>
+            <tr>
+                <td class="stats-part">Всего книг в каталоге</td>
+                <td><strong>10</strong></td>
+            </tr>
+            <tr>
+                <td>Средняя цена</td>
+                <td class="price-tag">500 ₽</td>
+            </tr>
+            <tr>
+                <td>Книги со скидкой</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Самый популярный автор</td>
+                <td>Джейн Остен</td>
+            </tr>
+        </table>
+
+        <div class="internal-nav">
+            <a href="#top">К началу</a>
+        </div>
     </main>
+
+    <script>
+        document.querySelectorAll('input[type="checkbox"][name="books[]"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const bookId = this.id;
+                const qtyInput = document.querySelector(`input[data-for="${bookId}"]`);
+                qtyInput.disabled = !this.checked;
+                if (this.checked) {
+                    qtyInput.value = 1;
+                    qtyInput.min = 1;
+                } else {
+                    qtyInput.value = 0;
+                }
+                updateTotal();
+                updateSubmitButton();
+            });
+        });
+        
+        document.querySelectorAll('input[type="number"][data-for]').forEach(input => {
+            input.addEventListener('input', function() {
+                updateTotal();
+                updateSubmitButton();
+            });
+        });
+        
+
+        function updateTotal() {
+            let total = 0;
+            
+            document.querySelectorAll('input[type="checkbox"][name="books[]"]:checked').forEach(checkbox => {
+                const bookId = checkbox.id;
+                const qtyInput = document.querySelector(`input[data-for="${bookId}"]`);
+                const quantity = parseInt(qtyInput.value) || 0;
+                const price = parseInt(checkbox.getAttribute('data-price'));
+                
+                total += price * quantity;
+            });
+            
+            document.getElementById('total-price').textContent = `Итого: ${total} ₽`;
+        }
+
+        function updateSubmitButton() {
+            const submitBtn = document.getElementById('submit-btn');
+            const hasSelectedBooks = document.querySelectorAll('input[type="checkbox"][name="books[]"]:checked').length > 0;
+            submitBtn.disabled = !hasSelectedBooks;
+        }
+
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+
+            document.querySelectorAll('input[type="checkbox"][name="books[]"]:checked').forEach(checkbox => {
+                const bookId = checkbox.id;
+                const qtyInput = document.querySelector(`input[data-for="${bookId}"]`);
+                const quantity = parseInt(qtyInput.value) || 1;
+                
+
+                const quantityField = document.createElement('input');
+                quantityField.type = 'hidden';
+                quantityField.name = `quantity_${bookId}`;
+                quantityField.value = quantity;
+                this.appendChild(quantityField);
+            });
+        });
+        
+        updateSubmitButton();
+    </script>
 </body>
 </html>
