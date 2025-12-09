@@ -4,85 +4,249 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Галерея книг - Фото и описание</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .gallery-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            border-bottom: 3px solid #f5c1e9;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            color: #2c3e50;
+        }
+        
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .book-cover {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .book-cover img {
+            border-radius: 4px;
+            border: 2px solid #dee2e6;
+        }
+        
+        .book-title {
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .book-author {
+            color: #6c757d;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .book-description {
+            color: #495057;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .book-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .book-detail {
+            background: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #495057;
+        }
+        
+        .internal-nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .internal-nav a {
+            display: inline-block;
+            margin: 0 10px 10px;
+            padding: 8px 15px;
+            background-color: #f5c1e9;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-item {
+                padding: 15px;
+            }
+            
+            .book-cover {
+                margin-bottom: 20px;
+            }
+            
+            .book-cover img {
+                max-width: 100px;
+            }
+            
+            .book-details {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .gallery-item {
+                padding: 10px;
+            }
+            
+            .book-title {
+                font-size: 1.2rem;
+            }
+            
+            .book-description {
+                font-size: 0.95rem;
+            }
+            
+            .internal-nav a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="catalog.html">Каталог книг</a></li>
-                <li class="current"><a href="gallery.html">Галерея</a></li>
-                <li><a href="forms.html">Формы</a></li>
-                <li><a href="passport.html">Паспорт</a></li>
-                <li><a href="task.html">Алгоритмическая задача</a></li>
-                <li><a href="https://www.ozon.ru/category/proza-35410/eksmo-100337819/" target="_blank">Озон</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Книжная галерея</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="catalog.html">Каталог книг</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="gallery.html">Галерея</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="forms.html">Формы</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="passport.html">Паспорт</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="task.html">Алгоритмическая задача</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.ozon.ru/category/proza-35410/eksmo-100337819/" target="_blank">Озон</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main>
-        <h1>Галерея книг</h1>
+    <main class="container mt-4">
+        <h1 class="text-center mb-4">Галерея книг</h1>
         
-        <div class="internal-nav">
-            <a href="#classic">Классика</a>
-            <a href="#modern">Современная проза</a>
-            <a href="#romance">Романы</a>
+        <div class="internal-nav mb-4">
+            <div class="d-flex flex-wrap justify-content-center">
+                <a href="#classic" class="btn btn-outline-primary m-2">Классика</a>
+                <a href="#modern" class="btn btn-outline-primary m-2">Современная проза</a>
+                <a href="#romance" class="btn btn-outline-primary m-2">Романы</a>
+            </div>
         </div>
 
         <section id="classic" class="gallery-section">
             <h2 class="section-title">Классическая литература</h2>
 
-            <div class="gallery-item">
-                <div class="book-cover">
-                    <a href="https://github.com/annpanikhina-hub/annpa/blob/main/1.webp.png?raw=true" target="_blank">
-                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/1.webp.png?raw=true" alt="Миссис Дэллоуэй" width="120">
-                    </a>
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">Миссис Дэллоуэй. На маяк</h3>
-                    <p class="book-author">Вирджиния Вулф</p>
-                    <p class="book-description">Знаменитый роман о внутреннем мире женщины, её воспоминаниях и переживаниях. Поток сознания как литературный приём, раскрывающий глубины человеческой психологии.</p>
-                    <div class="book-details">
-                        <span class="book-detail">1925 год</span>
-                        <span class="book-detail">Психологическая проза</span>
-                        <span class="book-detail">Классика модернизма</span>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="gallery-item h-100">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="book-cover">
+                                    <a href="https://github.com/annpanikhina-hub/annpa/blob/main/1.webp.png?raw=true" target="_blank">
+                                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/1.webp.png?raw=true" alt="Миссис Дэллоуэй" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="book-info">
+                                    <h3 class="book-title">Миссис Дэллоуэй. На маяк</h3>
+                                    <p class="book-author">Вирджиния Вулф</p>
+                                    <p class="book-description">Знаменитый роман о внутреннем мире женщины, её воспоминаниях и переживаниях. Поток сознания как литературный приём, раскрывающий глубины человеческой психологии.</p>
+                                    <div class="book-details">
+                                        <span class="book-detail">1925 год</span>
+                                        <span class="book-detail">Психологическая проза</span>
+                                        <span class="book-detail">Классика модернизма</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="book-cover">
-                    <a href="https://github.com/annpanikhina-hub/annpa/blob/main/2.webp?raw=true" target="_blank">
-                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/2.webp?raw=true" alt="Письмо незнакомки" width="120">
-                    </a>
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">Письмо незнакомки</h3>
-                    <p class="book-author">Стефан Цвейг</p>
-                    <p class="book-description">Трогательная история о безответной любви женщины к писателю, рассказанная в форме предсмертного письма. Пронзительная история самопожертвования и преданности.</p>
-                    <div class="book-details">
-                        <span class="book-detail">1922 год</span>
-                        <span class="book-detail">Драма</span>
-                        <span class="book-detail">Эпистолярный жанр</span>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="gallery-item h-100">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="book-cover">
+                                    <a href="https://github.com/annpanikhina-hub/annpa/blob/main/2.webp?raw=true" target="_blank">
+                                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/2.webp?raw=true" alt="Письмо незнакомки" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="book-info">
+                                    <h3 class="book-title">Письмо незнакомки</h3>
+                                    <p class="book-author">Стефан Цвейг</p>
+                                    <p class="book-description">Трогательная история о безответной любви женщины к писателю, рассказанная в форме предсмертного письма. Пронзительная история самопожертвования и преданности.</p>
+                                    <div class="book-details">
+                                        <span class="book-detail">1922 год</span>
+                                        <span class="book-detail">Драма</span>
+                                        <span class="book-detail">Эпистолярный жанр</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="book-cover">
-                    <a href="https://github.com/annpanikhina-hub/annpa/blob/main/4.webp?raw=true" target="_blank">
-                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/4.webp?raw=true" alt="Гордость и предубеждение" width="120">
-                    </a>
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">Гордость и предубеждение</h3>
-                    <p class="book-author">Джейн Остен</p>
-                    <p class="book-description">Классика английской литературы о любви, социальных предрассудках и семейных отношениях в викторианской Англии. История Элизабет Беннет и мистера Дарси.</p>
-                    <div class="book-details">
-                        <span class="book-detail">1813 год</span>
-                        <span class="book-detail">Английская классика</span>
-                        <span class="book-detail">Роман о любви</span>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="gallery-item h-100">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="book-cover">
+                                    <a href="https://github.com/annpanikhina-hub/annpa/blob/main/4.webp?raw=true" target="_blank">
+                                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/4.webp?raw=true" alt="Гордость и предубеждение" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="book-info">
+                                    <h3 class="book-title">Гордость и предубеждение</h3>
+                                    <p class="book-author">Джейн Остен</p>
+                                    <p class="book-description">Классика английской литературы о любви, социальных предрассудках и семейных отношениях в викторианской Англии. История Элизабет Беннет и мистера Дарси.</p>
+                                    <div class="book-details">
+                                        <span class="book-detail">1813 год</span>
+                                        <span class="book-detail">Английская классика</span>
+                                        <span class="book-detail">Роман о любви</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -91,20 +255,30 @@
         <section id="modern" class="gallery-section">
             <h2 class="section-title">Современная проза</h2>
 
-            <div class="gallery-item">
-                <div class="book-cover">
-                    <a href="https://github.com/annpanikhina-hub/annpa/blob/main/5.webp.png?raw=true" target="_blank">
-                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/5.webp.png?raw=true" alt="Маленькая хозяйка Большого дома" width="120">
-                    </a>
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">Маленькая хозяйка Большого дома</h3>
-                    <p class="book-author">Джек Лондон</p>
-                    <p class="book-description">Психологический роман о любовном треугольнике, разворачивающемся на фоне калифорнийского ранчо. Исследование человеческих страстей и моральных дилемм.</p>
-                    <div class="book-details">
-                        <span class="book-detail">1916 год</span>
-                        <span class="book-detail">Психологическая драма</span>
-                        <span class="book-detail">Калифорния</span>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="gallery-item h-100">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="book-cover">
+                                    <a href="https://github.com/annpanikhina-hub/annpa/blob/main/5.webp.png?raw=true" target="_blank">
+                                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/5.webp.png?raw=true" alt="Маленькая хозяйка Большого дома" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="book-info">
+                                    <h3 class="book-title">Маленькая хозяйка Большого дома</h3>
+                                    <p class="book-author">Джек Лондон</p>
+                                    <p class="book-description">Психологический роман о любовном треугольнике, разворачивающемся на фоне калифорнийского ранчо. Исследование человеческих страстей и моральных дилемм.</p>
+                                    <div class="book-details">
+                                        <span class="book-detail">1916 год</span>
+                                        <span class="book-detail">Психологическая драма</span>
+                                        <span class="book-detail">Калифорния</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -113,28 +287,40 @@
         <section id="romance" class="gallery-section">
             <h2 class="section-title">Романтическая литература</h2>
 
-            <div class="gallery-item">
-                <div class="book-cover">
-                    <a href="https://github.com/annpanikhina-hub/annpa/blob/main/3.webp?raw=true" target="_blank">
-                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/3.webp?raw=true" alt="Маленькие женщины" width="120">
-                    </a>
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">Маленькие женщины</h3>
-                    <p class="book-author">Луиза Мэй Олкотт</p>
-                    <p class="book-description">Трогательная история о взрослении четырёх сестёр Марч, их мечтах, трудностях и первой любви. Классика детской литературы, любимая поколениями читателей.</p>
-                    <div class="book-details">
-                        <span class="book-detail">1868 год</span>
-                        <span class="book-detail">Семейная сага</span>
-                        <span class="book-detail">Взросление</span>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="gallery-item h-100">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="book-cover">
+                                    <a href="https://github.com/annpanikhina-hub/annpa/blob/main/3.webp?raw=true" target="_blank">
+                                        <img src="https://github.com/annpanikhina-hub/annpa/blob/main/3.webp?raw=true" alt="Маленькие женщины" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="book-info">
+                                    <h3 class="book-title">Маленькие женщины</h3>
+                                    <p class="book-author">Луиза Мэй Олкотт</p>
+                                    <p class="book-description">Трогательная история о взрослении четырёх сестёр Марч, их мечтах, трудностях и первой любви. Классика детской литературы, любимая поколениями читателей.</p>
+                                    <div class="book-details">
+                                        <span class="book-detail">1868 год</span>
+                                        <span class="book-detail">Семейная сага</span>
+                                        <span class="book-detail">Взросление</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="internal-nav">
-            <a href="#top">К началу страницы</a>
+        <div class="internal-nav text-center mt-4">
+            <a href="#top" class="btn btn-secondary">К началу страницы</a>
         </div>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
