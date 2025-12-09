@@ -40,10 +40,21 @@
             border: 1px solid #eee;
             border-radius: 4px;
             background: white;
+            gap: 15px;
         }
         
         .book-checkbox input[type="checkbox"] {
-            margin-right: 10px;
+            margin-right: 5px;
+        }
+        
+        .book-image {
+            flex-shrink: 0;
+        }
+        
+        .book-image img {
+            width: 60px;
+            height: 80px;
+            object-fit: cover;
         }
         
         .book-info {
@@ -70,6 +81,7 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            flex-shrink: 0;
         }
         
         .quantity-control input[type="number"] {
@@ -163,14 +175,29 @@
         
         @media (max-width: 768px) {
             .book-checkbox {
-                flex-direction: column;
-                align-items: flex-start;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .book-image {
+                order: 1;
+                margin-right: 10px;
+            }
+            
+            .book-checkbox input[type="checkbox"] {
+                order: 2;
+            }
+            
+            .book-info {
+                order: 3;
+                flex-basis: calc(100% - 90px);
             }
             
             .quantity-control {
-                margin-top: 10px;
+                order: 4;
                 width: 100%;
                 justify-content: flex-end;
+                margin-top: 10px;
             }
             
             .book-table {
@@ -194,6 +221,11 @@
             .total-price {
                 font-size: 16px;
                 padding: 8px;
+            }
+            
+            .book-image img {
+                width: 50px;
+                height: 70px;
             }
         }
     </style>
@@ -354,6 +386,9 @@
                     <div class="book-selection">
                         <div class="book-checkbox">
                             <input type="checkbox" class="form-check-input" id="book1" name="books[]" value="Миссис Дэллоуэй. На маяк|450" data-price="450">
+                            <div class="book-image">
+                                <img src="https://ir-8.ozone.ru/s3/multimedia-1-3/wc1000/7026852351.jpg" alt="Миссис Дэллоуэй. На маяк" width="60" class="img-fluid rounded">
+                            </div>
                             <div class="book-info">
                                 <div class="book-title">Миссис Дэллоуэй. На маяк</div>
                                 <div class="book-author">Вирджиния Вулф</div>
@@ -367,6 +402,9 @@
                         
                         <div class="book-checkbox">
                             <input type="checkbox" class="form-check-input" id="book2" name="books[]" value="Письмо незнакомки|420" data-price="420">
+                            <div class="book-image">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/9.webp?raw=true" alt="Письмо незнакомки" width="60" class="img-fluid rounded">
+                            </div>
                             <div class="book-info">
                                 <div class="book-title">Письмо незнакомки</div>
                                 <div class="book-author">Стефан Цвейг</div>
@@ -380,6 +418,9 @@
                         
                         <div class="book-checkbox">
                             <input type="checkbox" class="form-check-input" id="book3" name="books[]" value="Маленькие женщины|560" data-price="560">
+                            <div class="book-image">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/7.webp?raw=true" alt="Маленькие женщины" width="60" class="img-fluid rounded">
+                            </div>
                             <div class="book-info">
                                 <div class="book-title">Маленькие женщины</div>
                                 <div class="book-author">Луиза Мэй Олкотт</div>
@@ -393,6 +434,9 @@
                         
                         <div class="book-checkbox">
                             <input type="checkbox" class="form-check-input" id="book4" name="books[]" value="Гордость и предубеждение|480" data-price="480">
+                            <div class="book-image">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/4.webp?raw=true" alt="Гордость и предубеждение" width="60" class="img-fluid rounded">
+                            </div>
                             <div class="book-info">
                                 <div class="book-title">Гордость и предубеждение</div>
                                 <div class="book-author">Джейн Остен</div>
@@ -406,6 +450,9 @@
                         
                         <div class="book-checkbox">
                             <input type="checkbox" class="form-check-input" id="book5" name="books[]" value="Маленькая хозяйка Большого дома|520" data-price="520">
+                            <div class="book-image">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/8.webp?raw=true" alt="Маленькая хозяйка Большого дома" width="60" class="img-fluid rounded">
+                            </div>
                             <div class="book-info">
                                 <div class="book-title">Маленькая хозяйка Большого дома</div>
                                 <div class="book-author">Джек Лондон</div>
@@ -419,6 +466,9 @@
                         
                         <div class="book-checkbox">
                             <input type="checkbox" class="form-check-input" id="book6" name="books[]" value="Любовник леди Чаттерли|470" data-price="470">
+                            <div class="book-image">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/11.webp?raw=true" alt="Любовник леди Чаттерли" width="60" class="img-fluid rounded">
+                            </div>
                             <div class="book-info">
                                 <div class="book-title">Любовник леди Чаттерли</div>
                                 <div class="book-author">Дэвид Герберт Лоуренс</div>
@@ -432,6 +482,9 @@
                         
                         <div class="book-checkbox">
                             <input type="checkbox" class="form-check-input" id="book7" name="books[]" value="Ламское счастье|390" data-price="390">
+                            <div class="book-image">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/12.webp?raw=true" alt="Ламское счастье" width="60" class="img-fluid rounded">
+                            </div>
                             <div class="book-info">
                                 <div class="book-title">Ламское счастье</div>
                                 <div class="book-author">Эмиль Золя</div>
@@ -445,6 +498,9 @@
                         
                         <div class="book-checkbox">
                             <input type="checkbox" class="form-check-input" id="book8" name="books[]" value="Тэсс из рода д'Эрбервиллей|510" data-price="510">
+                            <div class="book-image">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/8.webp?raw=true" alt="Тэсс из рода д'Эрбервиллей" width="60" class="img-fluid rounded">
+                            </div>
                             <div class="book-info">
                                 <div class="book-title">Тэсс из рода д'Эрбервиллей</div>
                                 <div class="book-author">Томас Гарди</div>
@@ -458,6 +514,9 @@
                         
                         <div class="book-checkbox">
                             <input type="checkbox" class="form-check-input" id="book9" name="books[]" value="Мэнсфилд-парк|460" data-price="460">
+                            <div class="book-image">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/9.webp?raw=true" alt="Мэнсфилд-парк" width="60" class="img-fluid rounded">
+                            </div>
                             <div class="book-info">
                                 <div class="book-title">Мэнсфилд-парк</div>
                                 <div class="book-author">Джейн Остен</div>
@@ -471,6 +530,9 @@
                         
                         <div class="book-checkbox">
                             <input type="checkbox" class="form-check-input" id="book10" name="books[]" value="Незнакомка из Уайлдфелл-Холла|440" data-price="440">
+                            <div class="book-image">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/10.webp?raw=true" alt="Незнакомка из Уайлдфелл-Холла" width="60" class="img-fluid rounded">
+                            </div>
                             <div class="book-info">
                                 <div class="book-title">Незнакомка из Уайлдфелл-Холла</div>
                                 <div class="book-author">Энн Бронте</div>
@@ -576,13 +638,11 @@
         }
 
         document.getElementById('order-form').addEventListener('submit', function(e) {
-
             document.querySelectorAll('input[type="checkbox"][name="books[]"]:checked').forEach(checkbox => {
                 const bookId = checkbox.id;
                 const qtyInput = document.querySelector(`input[data-for="${bookId}"]`);
                 const quantity = parseInt(qtyInput.value) || 1;
                 
-
                 const quantityField = document.createElement('input');
                 quantityField.type = 'hidden';
                 quantityField.name = `quantity_${bookId}`;
