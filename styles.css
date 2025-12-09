@@ -415,6 +415,37 @@ form {
         margin: 5px 0;
     }
 }
+.nav-link {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
 
 
+.nav-link:hover {
+    background-color: rgba(245, 193, 233, 0.2);
+    color: #d63384;
+}
+
+.nav-link.active {
+    color: #fff;
+    background-color: #f5c1e9;
+    font-weight: bold;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 3px;
+    background-color: #d63384;
+    border-radius: 2px;
+}
 
