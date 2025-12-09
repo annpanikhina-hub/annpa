@@ -448,4 +448,13 @@ form {
     background-color: #d63384;
     border-radius: 2px;
 }
+.navbar-nav .nav-link.active {
+    color: #fff !important;
+    background-color: #f5c1e9 !important;
+    font-weight: bold !important;
+    position: relative !important;
+}
 
+.navbar-nav .nav-link {
+    color: #2c3e50 !important;
+}
