@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Находим все чекбоксы книг
     const bookCheckboxes = document.querySelectorAll('input[type="checkbox"][name="books[]"]');
-    
+
     // Для каждого чекбокса
     bookCheckboxes.forEach(checkbox => {
         // Когда меняем галочку
