@@ -282,6 +282,7 @@ form {
     .book-checkbox {
         flex-wrap: wrap;
         gap: 10px;
+        border: 1px solid black;
     }
     
     .book-image {
