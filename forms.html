@@ -6,6 +6,119 @@
     <title>Формы - Заказ и подписка</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .my-form-group {
+            margin-bottom: 20px;
+        }
+        
+        .my-form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .my-form-control {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        .my-form-control:focus {
+            outline: none;
+            border-color: #f5c1e9;
+            box-shadow: 0 0 0 3px rgba(245, 193, 233, 0.3);
+        }
+        
+        .my-form-select {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: white;
+            cursor: pointer;
+        }
+        
+        .my-form-check {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .my-form-check-input {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .my-form-check-label {
+            cursor: pointer;
+        }
+        
+        .checkbox-group, .radio-group {
+            margin-top: 10px;
+        }
+        
+        .my-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border: 2px solid black;
+            border-radius: 5px;
+            background-color: #f5c1e9;
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .my-btn:hover {
+            background-color: #e8a8d5;
+            border-color: #f5c1e9;
+            transform: translateY(-2px);
+        }
+        
+        .my-btn-outline {
+            background-color: transparent;
+            border: 2px solid black;
+            color: black;
+        }
+        
+        .my-btn-outline:hover {
+            background-color: black;
+            color: white;
+        }
+        
+        .my-btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            color: white;
+        }
+        
+        .my-btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+
+        .my-flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .button-group {
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -42,9 +155,9 @@
         <h1 class="mb-4">Формы заказа и подписки</h1>
         
         <div class="internal-nav mb-4">
-            <div class="d-flex flex-wrap justify-content-center">
-                <a href="#order-form" class="btn btn-outline-primary m-2">Форма заказа</a>
-                <a href="#contact-form" class="btn btn-outline-primary m-2">Форма подписки</a>
+            <div class="my-flex-container">
+                <a href="#order-form" class="my-btn my-btn-outline">Форма заказа</a>
+                <a href="#contact-form" class="my-btn my-btn-outline">Форма подписки</a>
             </div>
         </div>
 
@@ -55,23 +168,23 @@
                 
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="book_title" class="form-label">Ваша почта:</label>
-                            <input type="text" class="form-control" id="book_title" name="book_title" value="xxx@gmail.com" required>
+                        <div class="my-form-group">
+                            <label for="book_title" class="my-form-label">Ваша почта:</label>
+                            <input type="text" class="my-form-control" id="book_title" name="book_title" value="xxx@gmail.com" required>
                         </div>
                     </div>
                     
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="quantity" class="form-label">Количество:</label>
-                            <input type="number" class="form-control" id="quantity" name="quantity" min="1" max="10" value="1" required>
+                        <div class="my-form-group">
+                            <label for="quantity" class="my-form-label">Количество:</label>
+                            <input type="number" class="my-form-control" id="quantity" name="quantity" min="1" max="10" value="1" required>
                         </div>
                     </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="book_select" class="form-label">Выберите книгу:</label>
-                    <select class="form-select" id="book_select" name="book_title" required>
+                <div class="my-form-group">
+                    <label for="book_select" class="my-form-label">Выберите книгу:</label>
+                    <select class="my-form-select" id="book_select" name="book_title" required>
                         <option value="">Выберите книгу из списка</option>
                         <option value="master_and_margarita">Мастер и Маргарита - М. Булгаков</option>
                         <option value="crime_and_punishment">Преступление и наказание - Ф. Достоевский</option>
@@ -81,51 +194,51 @@
                     </select>
                 </div>
                 
-                <div class="form-group">
-                    <label class="form-label">Дополнительные услуги:</label>
+                <div class="my-form-group">
+                    <label class="my-form-label">Дополнительные услуги:</label>
                     <div class="checkbox-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gift_wrap" name="additional_services" value="gift_wrap">
-                            <label class="form-check-label" for="gift_wrap">Подарочная упаковка</label>
+                        <div class="my-form-check">
+                            <input class="my-form-check-input" type="checkbox" id="gift_wrap" name="additional_services" value="gift_wrap">
+                            <label class="my-form-check-label" for="gift_wrap">Подарочная упаковка</label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="bookmark" name="additional_services" value="bookmark">
-                            <label class="form-check-label" for="bookmark">Эксклюзивная закладка</label>
+                        <div class="my-form-check">
+                            <input class="my-form-check-input" type="checkbox" id="bookmark" name="additional_services" value="bookmark">
+                            <label class="my-form-check-label" for="bookmark">Эксклюзивная закладка</label>
                         </div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label">Тип заказа:</label>
+                <div class="my-form-group">
+                    <label class="my-form-label">Тип заказа:</label>
                     <div class="radio-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" id="standard" name="order_type" value="standard" checked>
-                            <label class="form-check-label" for="standard">
+                        <div class="my-form-check">
+                            <input class="my-form-check-input" type="radio" id="standard" name="order_type" value="standard" checked>
+                            <label class="my-form-check-label" for="standard">
                                 Стандартный заказ (доставка 3-5 дней)
                             </label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" id="express" name="order_type" value="express">
-                            <label class="form-check-label" for="express">
+                        <div class="my-form-check">
+                            <input class="my-form-check-input" type="radio" id="express" name="order_type" value="express">
+                            <label class="my-form-check-label" for="express">
                                 Экспресс-доставка (1-2 дня, +300 ₽)
                             </label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" id="gift" name="order_type" value="gift">
-                            <label class="form-check-label" for="gift">
+                        <div class="my-form-check">
+                            <input class="my-form-check-input" type="radio" id="gift" name="order_type" value="gift">
+                            <label class="my-form-check-label" for="gift">
                                 Подарочный набор (книга + открытка)
                             </label>
                         </div>
                     </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="delivery_date" class="form-label">Желаемая дата доставки:</label>
-                    <input type="date" class="form-control" id="delivery_date" name="delivery_date" required>
+                <div class="my-form-group">
+                    <label for="delivery_date" class="my-form-label">Желаемая дата доставки:</label>
+                    <input type="date" class="my-form-control" id="delivery_date" name="delivery_date" required>
                 </div>
                 
                 <div class="button-group">
-                    <input type="submit" class="btn btn-primary" value="Отправить заказ">
+                    <input type="submit" class="my-btn" value="Отправить заказ">
                 </div>
             </form>
         </section>
@@ -137,65 +250,65 @@
                 
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="surname" class="form-label">Фамилия:</label>
-                            <input type="text" class="form-control" id="surname" name="surname" value="Панихина" required>
+                        <div class="my-form-group">
+                            <label for="surname" class="my-form-label">Фамилия:</label>
+                            <input type="text" class="my-form-control" id="surname" name="surname" value="Панихина" required>
                         </div>
                     </div>
                     
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Имя:</label>
-                            <input type="text" class="form-control" id="name" name="name" value="Анна" required>
+                        <div class="my-form-group">
+                            <label for="name" class="my-form-label">Имя:</label>
+                            <input type="text" class="my-form-control" id="name" name="name" value="Анна" required>
                         </div>
                     </div>
                 </div>
                 
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="group" class="form-label">Группа/Отдел:</label>
-                            <input type="text" class="form-control" id="group" name="group" value="бссин242" >
+                        <div class="my-form-group">
+                            <label for="group" class="my-form-label">Группа/Отдел:</label>
+                            <input type="text" class="my-form-control" id="group" name="group" value="бссин242" >
                         </div>
                     </div>
                     
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Мобильный телефон:</label>
-                            <input type="tel" class="form-control" id="phone" name="phone" value="89877247060" required>
+                        <div class="my-form-group">
+                            <label for="phone" class="my-form-label">Мобильный телефон:</label>
+                            <input type="tel" class="my-form-control" id="phone" name="phone" value="89877247060" required>
                         </div>
                     </div>
                 </div>
                 
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="password" class="form-label">Пароль для входа:</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
+                        <div class="my-form-group">
+                            <label for="password" class="my-form-label">Пароль для входа:</label>
+                            <input type="password" class="my-form-control" id="password" name="password" required>
                         </div>
                     </div>
                     
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="email" class="form-label">Электронная почта:</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                        <div class="my-form-group">
+                            <label for="email" class="my-form-label">Электронная почта:</label>
+                            <input type="email" class="my-form-control" id="email" name="email" required>
                         </div>
                     </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="date" class="form-label">Дата подписки:</label>
-                    <input type="date" class="form-control" id="date" name="date" required>
+                <div class="my-form-group">
+                    <label for="date" class="my-form-label">Дата подписки:</label>
+                    <input type="date" class="my-form-control" id="date" name="date" required>
                 </div>
                 
                 <div class="button-group">
-                    <input type="submit" class="btn btn-primary" value="Подписаться">
+                    <input type="submit" class="my-btn" value="Подписаться">
                 </div>
             </form>
         </section>
 
         <div class="internal-nav text-center mt-4">
-            <a href="#top" class="btn btn-secondary">К началу страницы</a>
+            <a href="#top" class="my-btn my-btn-secondary">К началу страницы</a>
         </div>
     </main>
 
