@@ -6,6 +6,68 @@
     <title>Каталог книг</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .book-checkbox {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 2px solid #000000;
+            border-radius: 8px;
+            background: white;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .book-checkbox:hover {
+            border-color: #f5c1e9;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .book-checkbox.selected {
+            border-color: #f5c1e9;
+            background-color: #f9f0f7;
+        }
+        
+        .book-image img {
+            width: 60px;
+            height: 80px;
+            object-fit: cover;
+        }
+        
+        .book-info {
+            flex-grow: 1;
+        }
+        
+        .book-title {
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        
+        .book-author {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+        
+        .book-price {
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex-shrink: 0;
+        }
+        
+        .quantity-control input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -60,85 +122,61 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                <a href="https://www.ozon.ru/product/nabor-shipovnik-i-hrizantemy-iz-6-ti-romanov-malenkie-zhenshchiny-sherli-dovody-rassudka-tess-iz-1085633115/">
-                                    <img src="https://ir-8.ozone.ru/s3/multimedia-1-3/wc1000/7026852351.jpg" alt="Миссис Дэллоуэй. На маяк" width="60" class="img-fluid rounded">
-                                </a>
-                            </td>
+                            <td><img src="https://ir-8.ozone.ru/s3/multimedia-1-3/wc1000/7026852351.jpg" alt="Миссис Дэллоуэй. На маяк" width="60" class="img-fluid rounded"></td>
                             <td>Миссис Дэллоуэй. На маяк</td>
                             <td>Вирджиния Вулф</td>
                             <td class="price-tag">450 ₽</td>
                         </tr>
                         <tr>
-                            <td>
-                                <a href="https://www.ozon.ru/product/nabor-shipovnik-i-hrizantemy-iz-6-ti-romanov-malenkie-zhenshchiny-sherli-dovody-rassudka-tess-iz-1085633115/">
-                                    <img src="https://github.com/annpanikhina-hub/annpa/blob/main/9.webp?raw=true" alt="Письмо незнакомки" width="60" class="img-fluid rounded">
-                                </a>
-                            </td>
+                            <td><img src="https://github.com/annpanikhina-hub/annpa/blob/main/9.webp?raw=true" alt="Письмо незнакомки" width="60" class="img-fluid rounded"></td>
                             <td>Письмо незнакомки</td>
                             <td>Стефан Цвейг</td>
                             <td class="price-tag">420 ₽</td>
                         </tr>
                         <tr>
-                            <td>
-                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/7.webp?raw=true" alt="Маленькие женщины" width="60" class="img-fluid rounded">
-                            </td>
+                            <td><img src="https://github.com/annpanikhina-hub/annpa/blob/main/7.webp?raw=true" alt="Маленькие женщины" width="60" class="img-fluid rounded"></td>
                             <td>Маленькие женщины</td>
                             <td>Луиза Мэй Олкотт</td>
                             <td class="price-tag">560 ₽</td>
                         </tr>
                         <tr>
-                            <td>
-                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/4.webp?raw=true" alt="Гордость и предубеждение" width="60" class="img-fluid rounded">
-                            </td>
+                            <td><img src="https://github.com/annpanikhina-hub/annpa/blob/main/4.webp?raw=true" alt="Гордость и предубеждение" width="60" class="img-fluid rounded"></td>
                             <td>Гордость и предубеждение</td>
                             <td>Джейн Остен</td>
                             <td class="price-tag">480 ₽</td>
                         </tr>
                         <tr>
-                            <td>
-                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/8.webp?raw=true" alt="Маленькая хозяйка Большого дома" width="60" class="img-fluid rounded">
-                            </td>
+                            <td><img src="https://github.com/annpanikhina-hub/annpa/blob/main/8.webp?raw=true" alt="Маленькая хозяйка Большого дома" width="60" class="img-fluid rounded"></td>
                             <td>Маленькая хозяйка Большого дома</td>
                             <td>Джек Лондон</td>
                             <td class="price-tag">520 ₽</td>
                         </tr>
                         <tr>
-                            <td>
-                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/11.webp?raw=true" alt="Любовник леди Чаттерли" width="60" class="img-fluid rounded">
-                            </td>
+                            <td><img src="https://github.com/annpanikhina-hub/annpa/blob/main/11.webp?raw=true" alt="Любовник леди Чаттерли" width="60" class="img-fluid rounded"></td>
                             <td>Любовник леди Чаттерли</td>
                             <td>Дэвид Герберт Лоуренс</td>
                             <td class="price-tag">470 ₽</td>
                         </tr>
                         <tr>
-                            <td>
-                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/12.webp?raw=true" alt="Ламское счастье" width="60" class="img-fluid rounded">
-                            </td>
+                            <td><img src="https://github.com/annpanikhina-hub/annpa/blob/main/12.webp?raw=true" alt="Ламское счастье" width="60" class="img-fluid rounded"></td>
                             <td>Ламское счастье</td>
                             <td>Эмиль Золя</td>
                             <td class="price-tag">390 ₽</td>
                         </tr>
                         <tr>
-                            <td>
-                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/8.webp?raw=true" alt="Тэсс из рода д'Эрбервиллей" width="60" class="img-fluid rounded">
-                            </td>
+                            <td><img src="https://github.com/annpanikhina-hub/annpa/blob/main/8.webp?raw=true" alt="Тэсс из рода д'Эрбервиллей" width="60" class="img-fluid rounded"></td>
                             <td>Тэсс из рода д'Эрбервиллей</td>
                             <td>Томас Гарди</td>
                             <td class="price-tag">510 ₽</td>
                         </tr>
                         <tr>
-                            <td>
-                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/9.webp?raw=true" alt="Мэнсфилд-парк" width="60" class="img-fluid rounded">
-                            </td>
+                            <td><img src="https://github.com/annpanikhina-hub/annpa/blob/main/9.webp?raw=true" alt="Мэнсфилд-парк" width="60" class="img-fluid rounded"></td>
                             <td>Мэнсфилд-парк</td>
                             <td>Джейн Остен</td>
                             <td class="price-tag">460 ₽</td>
                         </tr>
                         <tr>
-                            <td>
-                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/10.webp?raw=true" alt="Незнакомка из Уайлдфелл-Холла" width="60" class="img-fluid rounded">
-                            </td>
+                            <td><img src="https://github.com/annpanikhina-hub/annpa/blob/main/10.webp?raw=true" alt="Незнакомка из Уайлдфелл-Холла" width="60" class="img-fluid rounded"></td>
                             <td>Незнакомка из Уайлдфелл-Холла</td>
                             <td>Энн Бронте</td>
                             <td class="price-tag">440 ₽</td>
@@ -158,7 +196,7 @@
                         <div class="book-checkbox">
                             <input type="checkbox" id="book1" name="books[]" value="Миссис Дэллоуэй. На маяк|450" data-price="450">
                             <div class="book-image">
-                                <img src="https://ir-8.ozone.ru/s3/multimedia-1-3/wc1000/7026852351.jpg" alt="Миссис Дэллоуэй. На маяк" width="60" class="img-fluid rounded">
+                                <img src="https://ir-8.ozone.ru/s3/multimedia-1-3/wc1000/7026852351.jpg" alt="Миссис Дэллоуэй. На маяк" class="img-fluid rounded">
                             </div>
                             <div class="book-info">
                                 <div class="book-title">Миссис Дэллоуэй. На маяк</div>
@@ -174,7 +212,7 @@
                         <div class="book-checkbox">
                             <input type="checkbox" id="book2" name="books[]" value="Письмо незнакомки|420" data-price="420">
                             <div class="book-image">
-                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/9.webp?raw=true" alt="Письмо незнакомки" width="60" class="img-fluid rounded">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/9.webp?raw=true" alt="Письмо незнакомки" class="img-fluid rounded">
                             </div>
                             <div class="book-info">
                                 <div class="book-title">Письмо незнакомки</div>
@@ -190,7 +228,7 @@
                         <div class="book-checkbox">
                             <input type="checkbox" id="book3" name="books[]" value="Маленькие женщины|560" data-price="560">
                             <div class="book-image">
-                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/7.webp?raw=true" alt="Маленькие женщины" width="60" class="img-fluid rounded">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/7.webp?raw=true" alt="Маленькие женщины" class="img-fluid rounded">
                             </div>
                             <div class="book-info">
                                 <div class="book-title">Маленькие женщины</div>
@@ -206,7 +244,7 @@
                         <div class="book-checkbox">
                             <input type="checkbox" id="book4" name="books[]" value="Гордость и предубеждение|480" data-price="480">
                             <div class="book-image">
-                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/4.webp?raw=true" alt="Гордость и предубеждение" width="60" class="img-fluid rounded">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/4.webp?raw=true" alt="Гордость и предубеждение" class="img-fluid rounded">
                             </div>
                             <div class="book-info">
                                 <div class="book-title">Гордость и предубеждение</div>
@@ -222,7 +260,7 @@
                         <div class="book-checkbox">
                             <input type="checkbox" id="book5" name="books[]" value="Маленькая хозяйка Большого дома|520" data-price="520">
                             <div class="book-image">
-                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/8.webp?raw=true" alt="Маленькая хозяйка Большого дома" width="60" class="img-fluid rounded">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/8.webp?raw=true" alt="Маленькая хозяйка Большого дома" class="img-fluid rounded">
                             </div>
                             <div class="book-info">
                                 <div class="book-title">Маленькая хозяйка Большого дома</div>
@@ -238,7 +276,7 @@
                         <div class="book-checkbox">
                             <input type="checkbox" id="book6" name="books[]" value="Любовник леди Чаттерли|470" data-price="470">
                             <div class="book-image">
-                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/11.webp?raw=true" alt="Любовник леди Чаттерли" width="60" class="img-fluid rounded">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/11.webp?raw=true" alt="Любовник леди Чаттерли" class="img-fluid rounded">
                             </div>
                             <div class="book-info">
                                 <div class="book-title">Любовник леди Чаттерли</div>
@@ -254,7 +292,7 @@
                         <div class="book-checkbox">
                             <input type="checkbox" id="book7" name="books[]" value="Ламское счастье|390" data-price="390">
                             <div class="book-image">
-                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/12.webp?raw=true" alt="Ламское счастье" width="60" class="img-fluid rounded">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/12.webp?raw=true" alt="Ламское счастье" class="img-fluid rounded">
                             </div>
                             <div class="book-info">
                                 <div class="book-title">Ламское счастье</div>
@@ -270,7 +308,7 @@
                         <div class="book-checkbox">
                             <input type="checkbox" id="book8" name="books[]" value="Тэсс из рода д'Эрбервиллей|510" data-price="510">
                             <div class="book-image">
-                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/8.webp?raw=true" alt="Тэсс из рода д'Эрбервиллей" width="60" class="img-fluid rounded">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/8.webp?raw=true" alt="Тэсс из рода д'Эрбервиллей" class="img-fluid rounded">
                             </div>
                             <div class="book-info">
                                 <div class="book-title">Тэсс из рода д'Эрбервиллей</div>
@@ -286,7 +324,7 @@
                         <div class="book-checkbox">
                             <input type="checkbox" id="book9" name="books[]" value="Мэнсфилд-парк|460" data-price="460">
                             <div class="book-image">
-                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/9.webp?raw=true" alt="Мэнсфилд-парк" width="60" class="img-fluid rounded">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/9.webp?raw=true" alt="Мэнсфилд-парк" class="img-fluid rounded">
                             </div>
                             <div class="book-info">
                                 <div class="book-title">Мэнсфилд-парк</div>
@@ -302,7 +340,7 @@
                         <div class="book-checkbox">
                             <input type="checkbox" id="book10" name="books[]" value="Незнакомка из Уайлдфелл-Холла|440" data-price="440">
                             <div class="book-image">
-                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/10.webp?raw=true" alt="Незнакомка из Уайлдфелл-Холла" width="60" class="img-fluid rounded">
+                                <img src="https://github.com/annpanikhina-hub/annpa/blob/main/10.webp?raw=true" alt="Незнакомка из Уайлдфелл-Холла" class="img-fluid rounded">
                             </div>
                             <div class="book-info">
                                 <div class="book-title">Незнакомка из Уайлдфелл-Холла</div>
@@ -359,29 +397,7 @@
             <a href="#top" class="btn btn-secondary">К началу</a>
         </div>
     </main>
-    <style>
-        .book-checkbox {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            padding: 15px;
-            border: 2px solid #d1d1d1;
-            border-radius: 8px;
-            background: white;
-            gap: 15px;
-            transition: all 0.3s ease;
-        }
-        
-        .book-checkbox:hover {
-            border-color: #f5c1e9;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .book-checkbox.selected {
-            border-color: #f5c1e9;
-            background-color: #f9f0f7;
-        }
-    </style>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
