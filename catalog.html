@@ -67,6 +67,120 @@
             padding: 5px;
             text-align: center;
         }
+
+        .my-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        .my-table thead {
+            background-color: #f8f9fa;
+            border-bottom: 2px solid black;
+        }
+        
+        .my-table th {
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .my-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .my-table tr:hover {
+            background-color: #f9f0f7;
+        }
+
+        .my-card {
+            border: 2px solid black;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: white;
+            margin-bottom: 20px;
+        }
+        
+        .my-card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .my-card-body {
+            padding: 0;
+        }
+
+        .my-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 2px solid black;
+            border-radius: 5px;
+            background-color: white;
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .my-btn:hover {
+            background-color: #f5c1e9;
+            border-color: #f5c1e9;
+            transform: translateY(-2px);
+        }
+        
+        .my-btn-outline {
+            background-color: transparent;
+            border: 2px solid black;
+            color: black;
+        }
+        
+        .my-btn-outline:hover {
+            background-color: black;
+            color: white;
+        }
+        
+        .my-btn-primary {
+            background-color: #f5c1e9;
+            border-color: #f5c1e9;
+            color: black;
+            font-weight: bold;
+        }
+        
+        .my-btn-primary:hover {
+            background-color: #e8a8d5;
+            border-color: #e8a8d5;
+        }
+        
+        .my-btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            color: white;
+        }
+        
+        .my-btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+
+        .my-table-bordered {
+            border: 2px solid black;
+        }
+        
+        .my-table-bordered th,
+        .my-table-bordered td {
+            border: 1px solid #ddd;
+        }
+        
+        .my-table-bordered thead th {
+            border-bottom: 2px solid black;
+        }
     </style>
 </head>
 <body>
@@ -103,16 +217,16 @@
         <h1 class="text-center mb-4">Каталог книг</h1>
         
         <div class="internal-nav mb-4 text-center">
-            <a href="#fiction" class="btn btn-outline-primary me-2">Художественная литература</a>
-            <a href="#order-form" class="btn btn-outline-primary me-2">Форма заказа</a>
-            <a href="#stats" class="btn btn-outline-primary">Статистика</a>
+            <a href="#fiction" class="my-btn my-btn-outline">Художественная литература</a>
+            <a href="#order-form" class="my-btn my-btn-outline">Форма заказа</a>
+            <a href="#stats" class="my-btn my-btn-outline">Статистика</a>
         </div>
         
         <section id="fiction" class="mb-5">
             <h2 class="mb-3">Художественная литература</h2>
-            <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead class="table-light">
+            <div style="overflow-x: auto;">
+                <table class="my-table">
+                    <thead>
                         <tr>
                             <th>Обложка</th>
                             <th>Название</th>
@@ -186,9 +300,9 @@
             </div>
         </section>
 
-        <div class="checkout-form card" id="order-form">
-            <div class="card-body">
-                <h3 class="card-title mb-4">Выберите книги для заказа</h3>
+        <div class="my-card" id="order-form">
+            <div class="my-card-body">
+                <h3 class="my-card-title">Выберите книги для заказа</h3>
                 <form action="https://google.com" target="_blank" method="get">
                     <input type="hidden" name="form_type" value="multiple_books_order">
                     
@@ -359,14 +473,14 @@
                     </div>
                     
                     <div class="button-group">
-                        <input type="submit" class="btn btn-primary" value="Купить выбранные книги" id="submit-btn" disabled>
+                        <input type="submit" class="my-btn my-btn-primary" value="Купить выбранные книги" id="submit-btn" disabled>
                     </div>
                 </form>
             </div>
         </div>
 
-        <div class="table-responsive mt-5" id="stats">
-            <table class="table table-bordered">
+        <div style="overflow-x: auto; margin-top: 3rem;" id="stats">
+            <table class="my-table my-table-bordered">
                 <thead>
                     <tr>
                         <th colspan="2" class="text-center">Статистика книг</th>
@@ -394,7 +508,7 @@
         </div>
 
         <div class="internal-nav text-center mt-4">
-            <a href="#top" class="btn btn-secondary">К началу</a>
+            <a href="#top" class="my-btn my-btn-secondary">К началу</a>
         </div>
     </main>
 
